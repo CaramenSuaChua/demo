@@ -3,27 +3,27 @@ pipeline {
     stages {
         stage('Clone'){
             steps{
-                echo 'clone code from github'
+                echo 'Clone code from github'
             }
         }
 
         stage('Build'){
             steps{
-                echo 'build code'
+                echo 'Build code'
             }
         }
 
         stage('Test'){
             steps{
-                echo 'run unittest'
+                echo 'Run unittest'
             }
         }
 
         stage('Build Docker'){
             steps{
-                echo 'build image'
-                echo 'tag'
-                echo 'push docker hub'
+                echo 'Build image'
+                echo 'Tag'
+                echo 'Push docker hub'
             }
         }
     }
