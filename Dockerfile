@@ -1,14 +1,11 @@
-# Sử dụng image Node.js chính thức
-FROM node:18-alpine
+# Sử dụng image Nginx chính thức
+FROM nginx:alpine
 
-# Cài đặt dependencies
-RUN npm install
+# Copy file dung.html vào thư mục mặc định của Nginx
+COPY dung.html /usr/share/nginx/html/index.html
 
-# Copy toàn bộ mã nguồn vào container
-COPY . .
+# Mở cổng 80
+EXPOSE 80
 
-# Expose port ứng dụng chạy (ví dụ: 3000)
-EXPOSE 3000
-
-# Lệnh chạy ứng dụng
-CMD ["node", "server.js"]
+# Khởi động Nginx
+CMD ["nginx", "-g", "daemon off;"]
