@@ -4,6 +4,7 @@ pipeline {
         stage('Clone'){
             steps{
                 git credentialsId: 'github', url: 'https://github.com/CaramenSuaChua/demo.git'
+                echo 'done'
             }
         }
 
