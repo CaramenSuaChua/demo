@@ -14,6 +14,7 @@ pipeline {
                     sh label: '', script: 'docker build -t caramensuachua/my-website .'
                     sh label: '', script: 'docker push caramensuachua/my-website .'
                 }
+                echo 'build'
             }
         }
     }
