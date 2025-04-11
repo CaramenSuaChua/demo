@@ -23,7 +23,7 @@ pipeline {
             steps{
                 sshagent(['aws']) {
                     sh '''
-                        ssh -o StrictHostKeyChecking=no ec2-user@54.251.64.222 "hostname && uptime"
+                        ssh -o StrictHostKeyChecking=no ec2-user@54.251.64.222 << 'EOF'
                         sudo su
                         ls -l
                     '''
